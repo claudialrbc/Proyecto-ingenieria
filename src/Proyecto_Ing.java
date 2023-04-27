@@ -4,7 +4,7 @@ public class Proyecto_Ing {
 	//1. Función del valor del Ancho de Banda: 
 	public static String AnchoBanda() {
 		double ValorAnchoBanda = (double)(Math.random()*(1000-20+1));
-		String bandera = " ";
+		String bandera = "  ";
 		//El 90% de este rango serían valores superiores a 890,91
 		//Por lo tanto, evaluamos el aleatorio del Ancho de Banda:
 		if (ValorAnchoBanda>=890.91) {
