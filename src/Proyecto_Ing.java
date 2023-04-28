@@ -57,6 +57,26 @@ public class Proyecto_Ing {
 		
 		
 		////BLOQUE DE EVALUACIÓN DE VALORES////
+		
+		//declaración de variables de bloque:
+		int bandera=0; //Será la ALERTA. Cuando se active (cambie a 1), notificará un error pero no especifíca en qué.
+		
+		//ANCHO DE BANDA (variable: valorAnchoBanda)
+		if (valorAnchoBanda>=890.91) {
+			bandera=1;
+			System.out.println ("ERROR AB");
+		} 
+		else {
+			System.out.println(" ANCHO DE BANDA CORRECTO. ");
+		}
+		
+		//THROUGHPUT (variable: valorThroughput)
+		//LATENCIA (variable: valorLatencia)
+		//TASA DE ERROR DE BITS (BER) (variable: valorBER)
+		//TRÁFICO DE DATOS O FLUJO DE DATOS (variable: valorFlujoDatos)
+		
+		
+		
 		////BLOQUE DE CREACCIÓN DE FICHERO////
 		////BLOQUE DE FILTRADO/ANÁLISIS DE FICHERO////
 		
