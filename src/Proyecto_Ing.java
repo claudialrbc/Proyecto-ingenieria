@@ -1,5 +1,7 @@
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.Scanner;
 
 public class Proyecto_Ing {
 
@@ -49,26 +51,44 @@ public class Proyecto_Ing {
 		
 		////BLOQUE DE CREACCIÓN DE FICHERO CSV////
 		
-		File fichero = new File ("prueba.csv"); //creacción del fichero con el nombre de "prueba"
-		//Estructura try-catch para asegurar que no hay fallas en la creacción del fichero.
-		try (FileWriter fw = new FileWriter(fichero);) {
+		//Llamado al fichero (previamente creado): 'prueba.csv'
+		FileWriter fichero=null;
+		//Estructura try-catch para asegurar que no hay fallas en el llamado del fichero.
+		try {
+			fichero = new FileWriter ("prueba.csv");
 			//Declaramos un Array de nombres para guardarlo en el fichero como cabeceras.
 			String [] cabeceraNombres = {" Ancho de Banda ", " Throughput ", " Latencia ", " BER ", " Flujo de Datos"};
 			//Bucle que escribe las cabeceras:
 			for (int i=0;i<5;i++) { 
-				fw.write(cabeceraNombres [i] + "    ");
+				fichero.write(cabeceraNombres [i] + "    ");
 			}
-			fw.write("\n"); //pasamos a la siguiente línea en el fichero.
+			fichero.write("\n"); //pasamos a la siguiente línea en el fichero.
 			//Declaramos un Array con los elementos generados aleatoriamente.
 			float [] Datos= {valorAnchoBanda, valorThroughput, valorLatencia, valorBER, valorFlujoDatos};
 			//Bucle que escrie los parámetros:
 			for (int i=0; i<5; i++) {
-				fw.write(Datos[i] + "    ");
+				fichero.write(Datos[i] + "    ");
 			}
+			fichero.close(); //cerramos el stream
 		} catch (Exception e) { 
 			System.out.println ("Se ha producido un error."); 
 		}//fin catch
 	
+		//Lectura del fichero CSV
+		try {
+			FileReader historial = new FileReader ("prueba.csv");
+			System.out.println("... Se lee el fichero ...");
+			Scanner lectura = new Scanner(historial); // Configura para leer de fichero
+			while(lectura.hasNextLine()) { 
+				String[] linea= lectura.nextLine().split("   "); // Guardar en String
+				System.out.println(linea); // Imprimimos línea
+				}
+			lectura.close();//cerramos fichero
+			} catch(Exception ex) { 
+				System.out.println("ERROR");
+			}
+			
+				
 		
 		////BLOQUE DE EVALUACIÓN DE VALORES////
 		
