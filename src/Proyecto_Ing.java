@@ -6,12 +6,12 @@ import java.util.Scanner;
 public class Proyecto_Ing {
 
 	
-	//FunciÛn genÈrica para generar n˙meros aleatorios FLOAT (Usada en: Ancho de Banda; Throughput; Latencia):
+	//Funci√≥n gen√©rica para generar n√∫meros aleatorios FLOAT (Usada en: Ancho de Banda; Throughput; Latencia):
 		public static float generaNumAleatorioFLOAT (float minimo, float maximo) {
 			return (float)(Math.random()*(minimo-(maximo+1))+(maximo+1));
 		}//llave (aleatorios con decimales)
 		
-	//FunciÛn genÈrica para generar n˙meros aleatorios INT (Usada en: Tasa de error de bits/BER ; Tr·fico de Datos/Flujo de Datos):
+	//Funci√≥n gen√©rica para generar n√∫meros aleatorios INT (Usada en: Tasa de error de bits/BER ; Tr√°fico de Datos/Flujo de Datos):
 		public static int generaNumAleatorioINT (int minimo, int maximo) {
 			return (int)(Math.random()*(minimo-(maximo+1))+(maximo+1));
 		}//llave (aleatorios int)
@@ -20,7 +20,7 @@ public class Proyecto_Ing {
 	public static void main(String[] args) {
 
 		
-		////BLOQUE DE CONSTRUCCI”N DE VALORES ALEATORIOS////
+		////BLOQUE DE CONSTRUCCI√ìN DE VALORES ALEATORIOS////
 		
 		//ANCHO DE BANDA
 		float minAnchoBanda=20;
@@ -42,14 +42,14 @@ public class Proyecto_Ing {
 		int maxBER=0;
 		int valorBER = generaNumAleatorioINT(minBER,maxBER);
 		System.out.println ("La Tasa de Error de Bits es de " + valorBER + "%.");
-		//TR¡FICO DE DATOS O FLUJO DE DATOS
+		//TR√ÅFICO DE DATOS O FLUJO DE DATOS
 		int minFlujoDatos=0;
 		int maxFlujoDatos=1;
 		int valorFlujoDatos = generaNumAleatorioINT(minFlujoDatos,maxFlujoDatos);
-		System.out.println ("El Tr·fico de Datos es de " + valorFlujoDatos + " erlong/horas.");
+		System.out.println ("El Tr√°fico de Datos es de " + valorFlujoDatos + " erlong/horas.");
 		
 		
-		////BLOQUE DE CREACCI”N DE FICHERO CSV////
+		////BLOQUE DE CREACCI√ìN DE FICHERO CSV////
 		
 		//Llamado al fichero (previamente creado): 'prueba.csv'
 		FileWriter fichero=null;
@@ -62,10 +62,10 @@ public class Proyecto_Ing {
 			for (int i=0;i<5;i++) { 
 				fichero.write(cabeceraNombres [i] + "    ");
 			}
-			fichero.write("\n"); //pasamos a la siguiente lÌnea en el fichero.
+			fichero.write("\n"); //pasamos a la siguiente l√≠nea en el fichero.
 			//Declaramos un Array con los elementos generados aleatoriamente.
 			float [] Datos= {valorAnchoBanda, valorThroughput, valorLatencia, valorBER, valorFlujoDatos};
-			//Bucle que escrie los par·metros:
+			//Bucle que escrie los par√°metros:
 			for (int i=0; i<5; i++) {
 				fichero.write(Datos[i] + "    ");
 			}
@@ -81,7 +81,7 @@ public class Proyecto_Ing {
 			Scanner lectura = new Scanner(historial); // Configura para leer de fichero
 			while(lectura.hasNextLine()) { 
 				String[] linea= lectura.nextLine().split("   "); // Guardar en String
-				System.out.println(linea); // Imprimimos lÌnea
+				System.out.println(linea); // Imprimimos l√≠nea
 				}
 			lectura.close();//cerramos fichero
 			} catch(Exception ex) { 
@@ -90,15 +90,16 @@ public class Proyecto_Ing {
 			
 				
 		
-		////BLOQUE DE EVALUACI”N DE VALORES////
+		////BLOQUE DE EVALUACI√ìN DE VALORES////
 		
-		//declaraciÛn de variables de bloque:
-		int bandera=0; //Ser· la ALERTA. Cuando se active (cambie a 1), notificar· un error pero no especifÌca en quÈ.
+		//declaraci√≥n de variables de bloque:
+		int bandera=0; //Ser√° la ALERTA. Cuando se active (cambie a 1), notificar√° un error pero no especif√≠ca en qu√©.
 		
 		//ANCHO DE BANDA (variable: valorAnchoBanda)
 		if (valorAnchoBanda>=890.91) {
 			bandera=1;
-			System.out.println ("ERROR Ancho de Banda");
+			System.out.println ("ERROR Ancho de Banda"); //¬øPodriamos meter otro bucle. Si valorAnchoBanda<minAnchoBanda --> print valor demasiado peque√±o.
+									// si valorAnchoBanda>maxAnchoBanda --> print valor demasiado grande. 
 		} 
 		else {
 			System.out.println(" ANCHO DE BANDA CORRECTO. ");
@@ -107,12 +108,12 @@ public class Proyecto_Ing {
 		//THROUGHPUT (variable: valorThroughput)
 		//LATENCIA (variable: valorLatencia)
 		//TASA DE ERROR DE BITS (BER) (variable: valorBER)
-		//TR¡FICO DE DATOS O FLUJO DE DATOS (variable: valorFlujoDatos)
+		//TR√ÅFICO DE DATOS O FLUJO DE DATOS (variable: valorFlujoDatos)
 		
 	
 		
 		
-		////BLOQUE DE FILTRADO/AN¡LISIS DE FICHERO////
+		////BLOQUE DE FILTRADO/AN√ÅLISIS DE FICHERO////
 		
 		
 		
