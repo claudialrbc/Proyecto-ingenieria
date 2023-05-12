@@ -46,7 +46,7 @@ public class Proyecto_Ing {
 		int minFlujoDatos=0;
 		int maxFlujoDatos=1;
 		int valorFlujoDatos = generaNumAleatorioINT(minFlujoDatos,maxFlujoDatos);
-		System.out.println ("El Tráfico de Datos es de " + valorFlujoDatos + " erlong/horas.");
+		System.out.println ("El Tráfico de Datos es de " + valorFlujoDatos + " erlang/horas.");
 		
 		
 		////BLOQUE DE CREACCIÓN DE FICHERO CSV////
