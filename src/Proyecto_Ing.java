@@ -98,8 +98,7 @@ public class Proyecto_Ing {
 		//ANCHO DE BANDA (variable: valorAnchoBanda)
 		if (valorAnchoBanda>=890.91) {
 			bandera=1;
-			System.out.println ("ERROR Ancho de Banda"); //¿Podriamos meter otro bucle. Si valorAnchoBanda<minAnchoBanda --> print valor demasiado pequeño.
-									// si valorAnchoBanda>maxAnchoBanda --> print valor demasiado grande. 
+			System.out.println ("ERROR Ancho de Banda"); 
 		} 
 		else {
 			System.out.println(" ANCHO DE BANDA CORRECTO. ");
